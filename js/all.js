@@ -51,7 +51,7 @@ let app = new Vue({
                     break;
                 case 'edit': //編輯
                     this.newProduct = false;
-                    this.editProduct = Object.assign({}, item);
+                    this.editProduct = JSON.parse(JSON.stringify(item)); //因添加options需深層複製
                     document.querySelector('.form-wrap').classList.add('show');
                     break;
                 case 'delete': //刪除
